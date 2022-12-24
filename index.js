@@ -17,24 +17,15 @@ const config = {
         mediaroot: './media',
     },
     trans: {
-        ffmpeg: "C:/Users/Ione/ffmpeg/bin/ffmpeg.exe",
+        ffmpeg: "/usr/local/bin/ffmpeg",
         tasks: [{
-            app: 'live',
+            app: 'rtmp',
             mp4: true,
+            
             mp4Flags: '[movflags=frag_keyframe+empty_moov]',
         }
         ]
     },
-    relay: {
-        ffmpeg: "C:/Users/Ione/ffmpeg/bin/ffmpeg.exe",
-        tasks: [
-            {
-                app: 'rtmp',
-                mode: 'push',
-                edge: 'rtmps://live-api-s.facebook.com',
-            },
-        ]
-    }
 };
 
 var nms = new NodeMediaServer(config)
